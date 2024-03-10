@@ -126,7 +126,7 @@ public class SimpleGraph {
                 case -2:
                     // reserved for RelDecl under Qt's
                     int varDeclSemantic = (int) Math.round((sigUnit - syntactic) * 65536);
-                    System.out.println(root +" " + varDeclSemantic);
+                    // System.out.println(root +" " + varDeclSemantic);
                     boolean scopeFound = false;
                     Map<String, Integer> localScope = null;
                     int countOfRelsInDecl = 0;
@@ -134,8 +134,8 @@ public class SimpleGraph {
                     while (!scopeFound) {
                         int varId = varDeclSemantic % numRels;
                         varIds.add(varId);
-                        System.out.println("VarId: " + varId);
-                        System.out.println(dynamicScopeRelMap);
+                        // System.out.println("VarId: " + varId);
+                        // System.out.println(dynamicScopeRelMap);
                         for (Map<String, Integer> scopeMap : dynamicScopeRelMap.values()) {
                             for (Map.Entry<String, Integer> entry : scopeMap.entrySet()) {
                                 if (entry.getValue() == varId) {

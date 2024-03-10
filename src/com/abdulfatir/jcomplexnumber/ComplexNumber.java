@@ -17,6 +17,7 @@ package com.abdulfatir.jcomplexnumber;
  * 
  * @author      Abdul Fatir
  * @version		1.2
+ * @editedby    Guanxuan Wu
  * 
  */
 public class ComplexNumber

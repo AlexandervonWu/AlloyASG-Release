@@ -1,0 +1,32 @@
+module unknown
+open util/integer [] as integer
+sig State {
+trans: (Event->State)
+}
+sig Init in State {}
+sig Event {}
+pred inv3[] {
+(all s: (one State),s1: (one State),e: (one Event) {
+(lone (e->s1))
+})
+}
+pred inv3C[] {
+(all s: (one State),e: (one Event) {
+(lone (e.(s.trans)))
+})
+}
+pred overconstrained[] {
+((inv3C[]) && (!(inv3[])))
+}
+pred underconstrained[] {
+((!(inv3C[])) && (inv3[]))
+}
+pred both[] {
+((inv3C[]) && (inv3[]))
+}
+
+
+
+run overconstrained
+run underconstrained
+run both

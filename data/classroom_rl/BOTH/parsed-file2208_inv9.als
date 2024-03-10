@@ -1,0 +1,43 @@
+module unknown
+open util/integer [] as integer
+sig Person {
+Tutors: (set Person),
+Teaches: (set Class)
+}
+sig Group {}
+sig Class {
+Groups: (Person->Group)
+}
+sig Teacher in Person {}
+sig Student in Person {}
+pred inv9[] {
+((some t: (one Teacher) {
+(all c: (one Class) {
+((t->c) in Teaches)
+})
+}) && (all c: (one Class) {
+(all t: (one Teacher) {
+((t->c) in Teaches)
+})
+}))
+}
+pred inv9C[] {
+(all c: (one Class) {
+(lone ((Teaches.c) & Teacher))
+})
+}
+pred overconstrained[] {
+((inv9C[]) && (!(inv9[])))
+}
+pred underconstrained[] {
+((!(inv9C[])) && (inv9[]))
+}
+pred both[] {
+((inv9C[]) && (inv9[]))
+}
+
+
+
+run overconstrained
+run underconstrained
+run both

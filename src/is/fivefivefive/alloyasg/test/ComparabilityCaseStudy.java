@@ -132,9 +132,9 @@ public class ComparabilityCaseStudy {
         int numberBoth = visualPair.a.z;
         int totalEdges = numberG1Only + numberG2Only + numberBoth;
         System.out.println("Total number of decomplicated edges (AST links equivalent): " + totalEdges);
-        System.out.println("Number of edges present in the corrected predicate, but not in the faulty predicate: " + numberG1Only + " (" +  (numberG1Only * 100.0 / (numberG1Only + numberBoth)) + "% of nodes in the corrected predicate)");
-        System.out.println("Number of edges present in the faulty predicate, but not in the corrected predicate: " + numberG2Only + " (" +  (numberG2Only * 100.0 / (numberG2Only + numberBoth)) + "% of nodes in the faulty predicate)");
-        System.out.println("Number of edges present in both the predicates: " + numberBoth + " (" +  (numberBoth * 100.0 / (numberG1Only + numberBoth)) + "% of nodes in the corrected predicate and " +  (numberBoth * 100.0 / (numberG2Only + numberBoth)) + "% of nodes in the faulty predicate)");
+        System.out.println("Number of edges present in the corrected predicate, but not in the faulty predicate: " + numberG1Only + " (" +  (numberG1Only * 100.0 / (numberG1Only + numberBoth)) + "% of edges in the corrected predicate)");
+        System.out.println("Number of edges present in the faulty predicate, but not in the corrected predicate: " + numberG2Only + " (" +  (numberG2Only * 100.0 / (numberG2Only + numberBoth)) + "% of edges in the faulty predicate)");
+        System.out.println("Number of edges present in both the predicates: " + numberBoth + " (" +  (numberBoth * 100.0 / (numberG1Only + numberBoth)) + "% of edges in the corrected predicate and " +  (numberBoth * 100.0 / (numberG2Only + numberBoth)) + "% of edges in the faulty predicate)");
         System.out.println("-----------------------------------------------");
         long endTime = System.currentTimeMillis();
         System.out.println("Total time taken: " + (endTime - startTime) + " ms");

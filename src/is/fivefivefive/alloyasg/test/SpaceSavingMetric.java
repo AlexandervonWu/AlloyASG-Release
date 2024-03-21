@@ -1,10 +1,7 @@
 package is.fivefivefive.alloyasg.test;
 import java.io.File;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import edu.mit.csail.sdg.parser.CompModule;
 import parser.ast.nodes.ExprOrFormula;
 import parser.ast.nodes.ModelUnit;
@@ -14,9 +11,7 @@ import parser.ast.visitor.ASTNodeFinder;
 import parser.etc.Pair;
 import parser.util.AlloyUtil;
 import is.fivefivefive.alloyasg.asg.ASGVisitor;
-import is.fivefivefive.alloyasg.asg.ASGraph;
 import is.fivefivefive.alloyasg.asg.PredSubgraph;
-import is.fivefivefive.alloyasg.etc.DoubleMap;
 import is.fivefivefive.alloyasg.exceptions.ScopeNotFoundException;
 import is.fivefivefive.alloyasg.exceptions.UnsupportedConstantException;
 import is.fivefivefive.alloyasg.vector.Vector2D;

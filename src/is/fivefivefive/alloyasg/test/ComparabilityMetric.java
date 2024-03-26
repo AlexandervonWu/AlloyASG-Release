@@ -57,7 +57,8 @@ public class ComparabilityMetric {
         File[] label1 = directory.listFiles();
         String toBePrinted = "Label, #Models, Relation, Correct%, Faulty%\n";
         int totalCount = 0;
-        double totalAvg = 0.0;
+        double totalAvgCor = 0.0;
+        double totalAvgFau = 0.0;
         for (File l1 : label1) {
             String labelProblem = l1.getName();
             File[] label2 = l1.listFiles();
@@ -105,7 +106,8 @@ public class ComparabilityMetric {
                     }
 
                 }
-                totalAvg += lsAvgCorrect + lsAvgFaulty;
+                totalAvgCor += lsAvgCorrect;
+                totalAvgFau += lsAvgFaulty;
                 lsAvgCorrect /= countOfModels;
                 lsAvgFaulty /= countOfModels;
                 lsAvgCorrect = 100 * lsAvgCorrect;
@@ -115,8 +117,9 @@ public class ComparabilityMetric {
                 // toBePrinted += (labelProblem + " & " + countOfModels + " & " + labelStatus + " & " + df.format(categorySumWrong) + " & " + df.format(categorySumCorrect) + " \\\\\n");
             }
         }
-        totalAvg /= (totalCount*2);
-        System.out.println(totalCount + ", " + totalAvg);
+        totalAvgCor /= totalCount;
+        totalAvgFau /= totalCount;
+        System.out.println(totalCount + ", " + totalAvgFau + ", " + totalAvgCor);
         System.out.println(toBePrinted);
     }
     

@@ -65,11 +65,13 @@ public class SpaceSavingMetric {
             File[] label2 = l1.listFiles();
             for (File l2 : label2) {
                 String labelStatus = l2.getName();
-                switch (l2.getName()) {
+                switch (labelStatus) {
                     case "OVERCONSTRAINED":
                         labelStatus = "OVER";
+                        break;
                     case "UNDERCONSTRAINED":
                         labelStatus = "UNDER";
+                        break;
                     default:
                         
                 }

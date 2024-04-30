@@ -635,8 +635,8 @@ public class SimpleGraph {
                 case 12:
                 case -12:
                     // ITE
-                    return " (if " + backTranslate(children.get(order).get(1)) +
-                            " then " + backTranslate(children.get(order).get(2)) +
+                    return " (" + backTranslate(children.get(order).get(1)) +
+                            " => " + backTranslate(children.get(order).get(2)) +
                             " else " + backTranslate(children.get(order).get(3)) + ") ";
             }
             return "<UNKNOWN SEMANTIC " + semantic + " FOR SYNTAX ID " + syntactic + ">";
